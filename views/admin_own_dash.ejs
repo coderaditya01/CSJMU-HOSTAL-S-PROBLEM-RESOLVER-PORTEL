@@ -40,7 +40,7 @@
   
                 <td><b class="text-uppercase"><%=users[i]._id%>
                     <div class="text-center">
-                      <span class="badge badge-pill badge-secondary"><%=users[i].hostal%></span> </div></b>
+                      <span class="badge badge-pill badge-secondary"><%=users[i].hostal%>, {<%=users[i].hostal_room_no%>}</span> </div></b>
                 </td>
                 <td><b><%=moment(users[i].createdAt).format( 'ddd, D MMM YY')%></b></td>
                 <td><b><%=users[i].name%></b></td>
