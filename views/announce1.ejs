@@ -1,0 +1,53 @@
+
+
+     <div class="contain">
+        <%- include ("./nav4") %>
+      </div>
+    
+    <div class="container">
+        <div class="navbar mt-4 navbar-dark bg-light justify-content-center border border-success" id="textarea">
+
+            <h4 class="card-title font-weight-bold ">
+                <h2 class="text-success ">Make An Announcement </h2>
+            </h4>
+        </div>
+    </div>
+    <div class="contain mb-2">
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            <div class="card card-body text-center">
+                
+                <%- include ("./messages") %>
+                <form action="/make_a_announcement1" method="POST">
+                    
+                        <div class="form-group">
+                          <label for="textarea">Select Hostal:</label>
+                          <select class="form-select" aria-label="Default select example" name="hostal" id="textarea">
+                            
+                            <option value="All">All</option>
+                            <option value="Shiva ji Boys Hostal">Shiva ji Boys Hostal</option>
+                            <option value="Swarn Jayanti  Boys Hostal"> Swarn Jayanti Boys Hostal</option>
+                            <option value="Ganga Girls Hostal"> Ganga Girls Hostal</option>
+                            <option value="Saraswati Girls Hostal"> Saraswati Gitls Hostal</option>
+                            <option value="Kaveri Girls Hostal"> Kaveri Girls Hostal</option>
+                            
+                          </select>
+      
+                        </div>
+                      
+                    <div class="form-group">
+                        <label for="email">Make a Announcement </label>
+                        <textarea type="text" id="email" name="announce" class="form-control" rows="3" ></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success btn-block ">Announce</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    </div>
+ 
+    
+  
+    

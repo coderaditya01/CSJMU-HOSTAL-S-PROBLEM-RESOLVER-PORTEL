@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+    <body oncontextmenu="return false">
+    <div class="contain">
+      <%- include ("./nav1") %>
+    </div>
+    <div class="contain mb-2">
+        <div class="navbar mt-4 navbar-dark bg-light justify-content-center border border-success" id="textarea">
+
+            <h4 class="card-title font-weight-bold ">
+                <h2 class="text-success ">Raise A Problem</h2>
+            </h4>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card mx-auto mt-4 shadow rounded" >
+            <div class="card-body">
+               
+                <%- include ("./messages") %>
+                <form action="/submit_query" method="POST" id="feedback">
+                   
+                   
+              <div class="col-md-12">
+                <div class="form-group">
+                    <label for="textarea">Enter Working Phone_No:</label>
+                    <input type="tel" class="form-control" name="phone_no1" id="textarea" rows="3"
+                        placeholder="" >
+                </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-group">
+                  <label for="textarea">Related_to:</label>
+                      <select class="form-select" aria-label="Default select example" name="related_to" id="textarea">
+                        <option value="Electrician">Electrician</option>
+                        <option value="Plumber">Plumber</option>
+                        <option value="Cleaner">Cleaner</option>
+                        <option value="Carpenter">Carpenter</option>
+                        <option value="Technical Assistant">Technical Assistant</option>
+                        <option value="Mess">Mess</option>
+                        <option value="Horticulturist">Horticulturist</option>
+                        <option value="Others">Others</option>
+
+                      </select>
+              </div>
+          </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="textarea">Describe Your Problem:</label>
+                            <textarea type="text" class="form-control" name="query" id="textarea" rows="3"
+                                placeholder="" required minlength="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button id="submit" class="btn btn-success w-100 ">Post Feedback</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    
+   
+</body>
+

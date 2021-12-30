@@ -1,0 +1,103 @@
+<div class="contain">
+    <%- include ("./nav3") %>
+  </div>
+  <div class="contain mb-2">
+    <div class="navbar mt-4 navbar-dark bg-light justify-content-center border border-success" id="textarea">
+  
+      <h4 class="card-title font-weight-bold ">
+        <h2 class="text-success ">New Problems</h2>
+  
+      </h4>
+    </div>
+  </div>
+  
+  <div class="contain">
+    <%- include ("./messages") %>
+  
+  
+  
+      <div class="card card-outline card-primary">
+        <div class="card-body">
+          <table id="myTable" class="table tabe-hover table-bordered table-responsive table-condensed " id="parent">
+  
+            <thead>
+              <tr>
+                <th>Problem ID & Hostal </th>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Phone No</th>
+                <th>Problem</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+  
+            <tbody>
+              <% for(var i = (users.length-1); i>= 0 ; i--) { %>
+              <tr>
+  
+                <td><b class="text-uppercase"><%=users[i]._id%>
+                    <div class="text-center">
+                      <span class="badge badge-pill badge-secondary"><%=users[i].hostal%> {<%=users[i].hostal_room_no%>}</span> </div></b>
+                </td>
+                <td><b><%=moment(users[i].createdAt).format( 'ddd, D MMM YY')%></b></td>
+                <td><b><%=users[i].name%></b></td>
+                <td><b><%=users[i].phone_no%>,
+                    <%=users[i].phone_no1%></b></td>
+                <td><b><%=users[i].query%></b></td>
+                <td><b>
+  
+  
+                    <% switch (users[i].status) {
+                                      case 'inprocess' : %>
+                                      <div class="text-center">
+                    <b class='badge badge-pill badge-danger'>InProcess</b>
+                    </div>
+  
+                    <% break;
+                              case 'Forwarded' : %>
+                 <div class="text-center">
+                    <b class='badge badge-pill badge-warning'>Forwarded </b>
+                    <b class='badge badge-pill badge-warning'>by <%=users[i].assigner_name%> [<%=users[i].assigner_post%>]</b>
+                </div>
+                    
+                      
+                    <% break;
+                              
+                              case 'Committed' : %> <div class="text-center">
+                    <b class='badge badge-pill badge-info'>Problem Resolved Committed by Me</b>
+                   </div>
+                    <% break;
+                               case 'Committed1' : %>
+                               <div class="text-center">
+                    <b class='badge badge-pill badge-secondary'>Problem Resolved Committed </b>
+                    <b class='badge badge-pill badge-secondary'>by <%=users[i].assigner_name%>[<%=users[i].assigner_post%>]</b>
+  </div>
+                    <% break;
+                               case 'Resolved' : %>
+                               <div class="text-center">
+                    <b class='badge badge-pill badge-success'>Resolved</b>
+  </div>
+                    <% break;
+                              
+                              } %>
+                  </b></td>
+  
+  
+                <td class="text-center">
+                  <div class="btn-group">
+                    <a href="/update_incharge_query_<%= users[i]._id %>" class="btn btn-success btn-flat view_parcel"
+                      data-id="<?php echo $row['id'] ?>">
+                      <i class="fas fa-user-edit"></i>
+                    </a>
+  
+                  </div>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+  </div>

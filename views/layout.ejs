@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="assets/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+        <link rel="stylesheet" href="unimodal.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./../bootstrap.min.css">
+    <link rel="stylesheet" href="./../assets/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./../assets/download.png" />
+    <!-- Icons CDN -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/761d42c757.js" crossorigin="anonymous"></script>
+    <title>CSJMU HOSTAL'S PROBLEM RESOLVER PORTEL</title>
+</head>
+
+<body>
+    <h1>CSJMU HOSTAL'S PROBLEM RESOLVER PORTEL</h1>
+    <div class="contain ml-auto" id ="google_translate_element"></div>
+        <%- body %>
+        <div class="row mt-3 mx-0 px-0">
+            <div class="col-md-12 py-2px text-center bg-dark">
+                <p class="font-italic text-light ">&copy; Copyrights csjmuhostalproblemresolverportel 2021 All rights reserved.
+                </p>
+            </div>
+        </div>
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+       
+       <script>
+        $(document).ready( function () {
+          $('#myTable').DataTable({
+          "ordering": false
+});
+      } );
+
+    </script>
+     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+     <script type="text/javascript">
+        function googleTranslateElementInit(){
+          new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages:'hi,en',  layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+        }
+        </script>
+        
+</body>
+
+</html>

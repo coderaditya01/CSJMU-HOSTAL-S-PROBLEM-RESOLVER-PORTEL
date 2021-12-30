@@ -1,0 +1,62 @@
+
+
+
+    <div class="contain">
+        <%- include ("./nav4") %>
+      </div>
+      <div class="contain mb-2">
+          <div class="navbar mt-4 navbar-dark bg-light justify-content-center border border-success" id="textarea">
+  
+              <h4 class="card-title font-weight-bold ">
+                  <h2 class="text-success ">Higher Authority Profile Update </h2>
+              </h4>
+          </div>
+      </div>
+  
+      <div class="container">
+          <div class="card mx-auto mt-4 shadow rounded" >
+              <div class="card-body text-center">
+                  
+                  <%- include ("./messages") %>
+                  <form method="POST">
+                          <div class="new_user">
+                          
+                              <div class="form-group ">
+                                  <label for="yourname">Name:</label>
+                                  <input type="hidden" name="id" value="<%= users._id %>">
+                                  <input type="text" name="name" value="<%= users.name %>" placeholder="" class="form-control" id="yourname"
+                                      aria-describedby="emailHelp" >
+                              </div>
+                
+                        
+                              <div class="form-group ">
+                                <label for="phoneno1">Phone_No:</label>
+                                <input type="text" name="phoneno" value="<%= users.phoneno %>" placeholder="" class="form-control" id="phoneno"
+                                     >
+                            </div>
+                              <div class="form-group ">
+                                  <label for="phoneno1">Add Another Phone_No:</label>
+                                  <input type="text" name="phoneno1" value="<%= users.phoneno1 %>" placeholder="" class="form-control" id="phoneno"
+                                       >
+                              </div>
+                              <div class="form-group ">
+                                <label for="phoneno1">Post:</label>
+                                <input type="text" name="post" value="<%= users.post %>" placeholder="" class="form-control" id="phoneno"
+                                     >
+                            </div>
+                              <div class="form-group ">
+                                  <label for="addrress">Address:</label>
+                                  <input type="text" name="address" value="<%= users.address %>" placeholder="" class="form-control" id="phoneno"
+                                       >
+                              </div>
+                              
+                          <div class="form-group">
+                              <button type="submit" id="submit" class="btn btn-success w-100 update">Update</button>
+                          </div>
+                          </div>
+                      </form>
+              </div>
+          </div>
+      </div>
+      </div>
+      

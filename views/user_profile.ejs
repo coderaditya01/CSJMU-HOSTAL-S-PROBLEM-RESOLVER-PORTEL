@@ -1,0 +1,108 @@
+
+
+    <div class="contain">
+      <%- include ("./nav1") %>
+    </div>
+    <div class="contain mb-2">
+        <div class="navbar mt-4 navbar-dark bg-light justify-content-center border border-success" id="textarea">
+
+            <h4 class="card-title font-weight-bold ">
+                <h2 class="text-success ">Student Profile</h2>
+            </h4>
+        </div>
+    </div>
+
+    <div class="contain mb-2">
+    </section class="contain">
+    
+    <%- include ("./messages") %>
+    <section style="background-color: #eee;">
+        <div class="container mt-4 mb-4 py-5">
+            <% for(var i = (users.length-1); i>= 0 ; i--) { %>
+      
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="card mb-4">
+                <div class="card-body text-center">
+                  <img src="./../assets/student.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                  <h5 class="my-3"><%= users[i].name %></h5>
+                  <p class="text-muted mb-1">Student</p>
+                  <p class="text-muted mb-4"><%= users[i].course %> , <%= users[i].branch %></p>
+                  <div class="d-flex justify-content-center mb-2">
+                    
+                    
+                        <a href="/user_profile_edit_<%= users[i]._id %>" class="btn border-shadow btn-outline-primary ms-1 update">
+                            <span class="text-gradient"><i class="fas fa-pencil-alt"
+                                    style="color:blue">  </i> Edit </span>
+                            </a>
+                        
+                      
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-lg-8">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Full Name :</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0"><%= users[i].name %></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Email :</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0"><%= users[i].email %></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Course : </p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0"><%= users[i].course %> , <%= users[i].branch %> , <%= users[i].year %> year</p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Phone No :</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0"><%= users[i].phoneno %> , <%= users[i].phoneno1 %></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Hostal :</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0"><%= users[i].hostal %></p>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <p class="mb-0">Address :</p>
+                    </div>
+                    <div class="col-sm-9">
+                      <p class="text-muted mb-0"><%= users[i].address %></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% } %>
+      </section></div>
+   
+
+    
+  

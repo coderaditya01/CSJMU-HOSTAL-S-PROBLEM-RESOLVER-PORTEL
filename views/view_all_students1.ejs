@@ -1,0 +1,71 @@
+<div class="contain">
+    <%- include ("./nav2") %>
+  </div>
+  <div class="contain mb-2">
+    <div class="navbar mt-4 navbar-dark bg-light justify-content-center border border-success" id="textarea">
+  
+      <h4 class="card-title font-weight-bold ">
+        <h2 class="text-success ">View All Students Details</h2>
+  
+      </h4>
+    </div>
+  </div>
+  
+  <div class="contain">
+    <%- include ("./messages") %>
+  
+  
+  
+      <div class="card card-outline card-primary">
+        <div class="card-body">
+          <table id="myTable" class="table tabe-hover table-bordered table-responsive table-condensed " id="parent">
+  
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Phone No</th>
+                <th>Hostal Name</th>
+                <th>Room No</th>
+                <th>Gender</th>
+                <th>D.O.B.</th>
+                <th>Course & Batch.</th>
+                <th>Address</th>
+                <th>Added By</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+  
+            <tbody>
+              <% for(var i = (users.length-1); i>= 0 ; i--) { %>
+              <tr>
+  
+                <td><b class="text-lowercase"><%=users[i].email%></b></td>
+                <td><b><%=users[i].name%></b></td>
+                <td><b><%=users[i].phoneno%>,
+                    <%=users[i].phoneno1%></b></td>
+                <td><b><%=users[i].hostal%></b></td>
+                <td><b><%=users[i].hostal_room_no%></b></td>
+                <td><b><%=users[i].gender%></b></td>
+                <td><b><%=users[i].dob%></b></td>
+                <td><b><%=users[i].course%> ,<%=users[i].batch%></b></td>
+                <td><b><%=users[i].address%></b></td>
+                <td><b><%=users[i].added_by%></b></td>
+                
+  
+                <td class="text-center">
+                  <div class="btn-group">
+                    <a href="/delete_student1_<%= users[i]._id %>" onclick="return confirm('Are you confirm want to delete');"  class="btn border-shadow btn-danger delete" class="btn btn-success btn-flat">
+                      <i class="fas fa-trash"></i>
+                    </a>
+  
+                  </div>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </div>
+  </div>

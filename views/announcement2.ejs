@@ -1,0 +1,54 @@
+
+<body>
+    
+    <div class="contain">
+      <%- include ("./nav4") %>
+    </div>
+    <div class="contain mb-2">
+        <div class="navbar mt-4 navbar-dark bg-light justify-content-center border border-success" id="textarea">
+
+            <h4 class="card-title font-weight-bold ">
+                <h2 class="text-success ">View all Allouncements</h2>
+            </h4>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <%- include ("./messages") %>
+        <div class="row">
+
+            <div class="col-md-12 ">
+                <% for(var i = (users.length-1); i>= 0 ; i--) { %>
+                <ul class="comment__box">
+                    <li class="comment">
+                        <div class="card border-light mb-3 shadow rounded">
+                            <div class="card-body">
+                                <p class="  text-uppercase text-success "><span class="text-primary "></span>Hostal : <%= users[i].hostal %></p>
+                                <p class="  text-uppercase text-dark font-weight-bold "><span class="text-primary "></span><%= users[i].announce %></p>
+                               
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="./../assets/clock.png" alt="clock">
+                                        <small> <%=moment(users[i].createdAt).format( 'ddd, Do MMMM YYYY')%></small>
+                                    </div>
+
+                                  </a>
+                                    
+                                  
+                                    <small class=" text-uppercase text-primary mr-5 mb-1 font-weight-bold"><span class="text-primary "></span>- <%= users[i].name %> [ <%= users[i].post%> ]</small>
+                                  
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+

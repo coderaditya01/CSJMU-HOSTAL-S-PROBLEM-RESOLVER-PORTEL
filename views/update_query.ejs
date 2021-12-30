@@ -1,0 +1,191 @@
+<div class="contain">
+  <%- include ("./nav2") %>
+</div>
+<div class="contain mb-2">
+  <div class="navbar mt-4 navbar-dark bg-light justify-content-center border border-success" id="textarea">
+
+    <h4 class="card-title font-weight-bold ">
+      <h2 class="text-success ">Assign to Incharge</h2>
+    </h4>
+  </div>
+</div>
+
+<div class="card-body">
+  
+  <div class="container card ">
+    
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-md-12 mt-4">
+          <div class="callout callout-info">
+            <dl>
+              <div class="row">
+                <dt>Problem ID : </dt>
+                <dd>
+                  <h5 class="text-danger"><b>&nbsp <%=users._id%> ,[ <%=users.related_to%> ]</b></h5>
+                </dd>
+              </div>
+              <div class="row">
+                <dt>Status : </dt>
+                <dd>
+                  <h5 class="text-danger"><b> &nbsp
+                      <% switch (users.status) {
+                      case 'inprocess' : %>
+
+                      <b class='badge badge-pill badge-danger'>InProcess</b>
+
+                      <% break;
+                      case 'Forwarded' : %>
+                      <b class='badge badge-pill badge-warning'> Forwarded by
+                        <%=users.assigner_name%>[<%=users.assigner_post%>] to {Incharge}</b>
+
+                      <% break;
+                      
+                      case 'Committed' : %>
+                      <b class='badge badge-pill badge-secondary'>Problem Resolved Committed by
+                        <%=users.related_to%></b>
+
+                      <% break;
+                       case 'Committed1' : %>
+                      <b class='badge badge-pill badge-secondary'>Problem Resolved Committed by
+                        <%=users.assigner_name%>[<%=users.assigner_post%>]</b>
+
+                      <% break;
+                       case 'Resolved' : %>
+                      <b class='badge badge-pill badge-success'>Resolved</b>
+
+                      <% break;
+                      
+                      } %>
+                    </b></h5>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="callout callout-info">
+            <b class="border-bottom border-primary text-primary">Student Information</b>
+            <dl>
+              <dt>Name:</dt>
+              <dd><%=users.name%></dd>
+              <dt>Hostal & Room No:</dt>
+              <dd><%=users.name%> , <%=users.hostal_room_no%></dd>
+              <dt>Contact:</dt>
+              <dd><%=users.phone_no%> , <%=users.phone_no1%></dd>
+              <dt>Problem:</dt>
+              <dd><%=users.query%></dd>
+              <dt>Final Feedback:</dt>
+              <dd><%=users.final_feedback%></dd>
+            </dl>
+          </div>
+          <div class="callout callout-info">
+            <b class="border-bottom border-primary text-primary">Hostal Admin Information</b>
+            <dl>
+              <dt>Admin Name:</dt>
+              <dd><%=users.assigner_name%></dd>
+              <dt>Admin Post:</dt>
+              <dd><%=users.assigner_post%></dd>
+              <dt>Contact:</dt>
+              <dd><%=users.assigner_phone_no%> , <%=users.assigner_phone_no1%></dd>
+              <dt>Reply :</dt>
+              <dd><%=users.assigner_reply%></dd>
+            </dl>
+          </div>
+        </div>
+        <div class="col-md-6">
+
+          <div class="callout callout-info">
+            <% for(var i = (datass.length-1); i>= 0 ; i--) { %>
+            <b class="border-bottom border-primary text-primary">Incharge Information</b>
+
+            <dl>
+              <dt>Incharge Name :</dt>
+              <dd><%=datass[i].name%> , [ <%=datass[i].field%> ]</dd>
+              <dt>Contact :</dt>
+              <dd><%=datass[i].phoneno%> , <%=datass[i].phoneno1%></dd>
+              <dt>Reply :</dt>
+              <dd><%=users.incharge_reply%></dd>
+            </dl><% } %>
+          </div>
+
+<div class="card">
+          <div class="card-body">
+
+            <%- include ("./messages") %>
+            <form method="POST">
+              <div class="new_user">
+
+                <% for(var i = (data.length-1); i>= 0 ; i--) { %>
+                <div class="col-md-12" hidden>
+                  <div class="form-group">
+                    <label for="textarea">Assiger name</label>
+                    <input type="text" value="<%=data[i].name%>" class="form-control" name="assigner_name"
+                      id="textarea">
+                    <input type="text" value="<%=data[i].email%>" class="form-control" name="assigner_email"
+                      id="textarea">
+                    <input type="text" value="<%=data[i].post%>" class="form-control" name="assigner_post"
+                      id="textarea">
+                    <input type="text" value="<%=data[i].phoneno%>" class="form-control" name="assigner_phone_no"
+                      id="textarea">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="textarea">Change Problem Status :</label>
+                    <select class="form-select" aria-label="Default select example" name="status" id="textarea">
+
+                      <option value="Forwarded">Forwarded</option>
+                      <option value="Committed1"><b>Commit Resolved by Himself</b></option>
+                      <option value="Committed">Commit Resolved by Incharge</option>
+
+
+                    </select>
+
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="textarea">Assigned_to Incharge:</label>
+                    <select class="form-select" aria-label="Default select example" name="incharge_email" id="textarea">
+                      
+                        <% for(var i = (data.length-1); i>= 0 ; i--) { %>
+                      <option value="<%=data[i].name %>">Himself</option>
+                      <% } %>
+                      <% for(var i = (datas.length-1); i>= 0 ; i--) { %>
+                      <option value="<%=datas[i].email %>"><%=datas[i].name%></option>
+                      <% } %>
+                    </select>
+
+                  </div>
+                </div>
+                <% } %>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label for="textarea">Admin Reply</label>
+                    <input type="text" value="<%=users.assigner_reply%>" class="form-control" name="assigner_reply" id="textarea">
+
+                  </div>
+                </div>
+                
+                  <div class="row">
+                  <div class="col-lg-6">
+                  <a href="/admin_dashboard"  class="btn btn-secondary w-100 update">Cancel</a>
+                  </div>
+                  <div class="col-md-6">
+                  <button type="submit" id="submit" class="btn btn-success w-100 update">Assign Problem 
+                      </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>

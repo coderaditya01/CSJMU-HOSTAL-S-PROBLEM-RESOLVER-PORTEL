@@ -1,0 +1,33 @@
+
+  
+    <div class="contain mb-2">
+        <div class="navbar mt-4 navbar-dark bg-light justify-content-center border border-success" id="textarea">
+
+            <h4 class="card-title font-weight-bold ">
+                <h2 class="text-success ">Password Forgot Page</h2>
+            </h4>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6 m-auto">
+            <div class="card card-body text-center">
+                <h class="mb-3">
+                    <img src="/assets/secure-icon.png" alt="icon" width="20%" />
+                </h>
+                
+                <%- include ("./messages") %>
+                <form action="/forgot" method="POST">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" style='text-transform:lowercase' id="email" name="email" class="form-control" placeholder="Enter Email" />
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">Send me a password reset link</button>
+                </form>
+                <p class="mt-4">
+                    Remember your password? <a href="/login">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    

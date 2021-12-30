@@ -1,0 +1,93 @@
+
+<body>
+    
+    <div class="contain">
+      <%- include ("./nav1") %>
+    </div>
+    <div class="contain mb-2">
+        <div class="navbar mt-4 navbar-dark bg-light justify-content-center border border-success" id="textarea">
+
+            <h4 class="card-title font-weight-bold ">
+                <h2 class="text-success ">View Own's Problems</h2>
+            </h4>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <%- include ("./messages") %>
+        <div class="row">
+
+            <div class="col-md-12 ">
+                <% for(var i = (users.length-1); i>= 0 ; i--) { %>
+                <ul class="comment__box">
+                    <li class="comment">
+                        <div class="card border-light mb-3 shadow rounded">
+                            <div class="card-body">
+                              <p class="  text-uppercase color-dark font-weight-bold"><span class="text-danger font-weight-bold">Problem id : </span><%= users[i]._id %></p>
+                              <p class="  text-uppercase color-dark "><span class="text-success ">Status : </span><b>
+                              
+                                
+                                <% switch (users[i].status) {
+                                 case 'inprocess' : %>
+                                 
+                                         <b class='badge badge-pill badge-danger'>InProcess</b>
+                                 
+                                 <% break;
+                                 case 'Forwarded' : %>
+                                 <b class='badge badge-pill badge-warning'> Forwarded by <%=users[i].assigner_name%>[<%=users[i].assigner_post%>] to {Incharge}</b> 
+                                 
+                                         <% break;
+                                 
+                                 case 'Committed' : %>
+                                 <b class='badge badge-pill badge-secondary'>Problem Resolved Committed by <%=users[i].related_to%></b>
+                                 
+                                         <% break;
+                                  case 'Committed1' : %>
+                                  <b class='badge badge-pill badge-secondary'>Problem Resolved Committed by <%=users[i].assigner_name%>[<%=users[i].assigner_post%>]</b>
+                                         
+                                                 <% break;
+                                  case 'Resolved' : %>
+                                  <b class='badge badge-pill badge-success'>Resolved</b>
+                                         
+                                                 <% break;
+                                 
+                                 } %>
+                           
+                           </b></p>
+                                <p class="  text-uppercase color-dark "><span class="text-primary ">Hostal & Room No : </span><%= users[i].hostal %> , <%= users[i].room_no %></p>
+                                <p class="  text-uppercase color-dark "><span class="text-primary ">Related_to : </span><%= users[i].related_to %></p>
+                                <p class="  text-uppercase color-dark "><span class="text-primary ">Our Problem : </span><%= users[i].query %></p>
+                                <p class="  text-uppercase color-dark "><span class="text-secondary ">Admin Reply : </span><%= users[i].assigner_reply %></p>
+                                <p class="  text-uppercase color-dark "><span class="text-secondary ">Incharge Reply : </span><%= users[i].incharge_reply %></p>
+                                <p class="  text-uppercase color-dark "><span class="text-success">Final Feedback : </span><%= users[i].final_feedback %></p>
+                                <div class="row">
+                                    <div class="col">
+                                        <img src="./../assets/clock.png" alt="clock">
+                                        <small> <%=moment(users[i].createdAt).format( 'ddd, Do MMMM YYYY')%></small>
+                                    </div>
+
+                                  </a>
+                                    <a href="/update_own_query_<%= users[i]._id %>" class="btn btn-info border-shadow update">
+                                        <span class="text-gradient">Update Status/FB</span>
+                                        </a>
+
+                                    <a href="/delete_query_<%= users[i]._id %>" onclick="return confirm('Are you confirm want to delete');"  class="btn  border-shadow delete">
+                                        <span class="text-gradient"><i class="fas fa-trash "
+                                                style="color:red"></i></span>
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+

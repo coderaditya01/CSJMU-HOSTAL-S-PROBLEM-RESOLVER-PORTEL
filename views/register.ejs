@@ -1,0 +1,120 @@
+
+<div class="contain mb-2">
+  <div class="navbar mt-4 navbar-dark bg-light justify-content-center border border-success" id="textarea">
+
+    <h4 class="card-title font-weight-bold ">
+      <h2 class="text-success ">Student Register Page</h2>
+    </h4>
+  </div>
+</div>
+<div class="container mt-5">
+  <div class="card card-body">
+    <%- include ("./messages") %>
+    <form action="/register" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name"
+          value="<%= typeof name != 'undefined' ? name : '' %>" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
+          value="<%= typeof email != 'undefined' ? email : '' %>" />
+      </div>
+      <div class="form-group">
+        <label for="phoneno">Phone No</label>
+        <input type="phoneno" id="phoneno" name="phoneno" class="form-control" placeholder="Enter Phone No"
+          value="<%= typeof phoneno != 'undefined' ? phoneno : '' %>" />
+      </div>
+      <div class="form-group">
+        <label for="phoneno1">Alternative Phone No</label>
+        <input type="phoneno" id="phoneno1" name="phoneno1" class="form-control" placeholder="Enter Alternative Phone No"
+          value="<%= typeof phoneno1 != 'undefined' ? phoneno1 : '' %>" />
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth: </label>
+        <input type="date" id="dob" name="dob" class="form-control" 
+          value="<%= typeof dob != 'undefined' ? dob : '' %>" />
+      </div>
+
+      <div class="row">
+                
+          <div class="col">
+            <label for="course">Course</label>
+            <input type="text" id="phoneno" name="course" class="form-control" placeholder="Enter Course"
+              value="<%= typeof course != 'undefined' ? course : '' %>" />
+          </div>
+          <div class=" col">
+            <label for="branch">Batch</label>
+            <input type="text" id="branch" name="batch" class="form-control" placeholder="Enter Batch"
+              value="<%= typeof batch != 'undefined' ? batch: '' %>" />
+          </div>
+         
+        
+    </div>
+
+      <div class="form-group mt-2">
+        <div class="row">
+          <div class="col-md-4">
+            <label for="textarea">Select Hostal:</label>
+            
+
+          </div>
+          <div class="col-md-4">
+            <select class="form-select" aria-label="Default select example" name="hostal" id="textarea">
+            <option>Select Hostal</option>
+            <option value="Shiva ji Boys Hostal">Shiva ji Boys Hostal</option>
+            <option value="Swarn Jayanti Boys Hostal"> Swarn Jayanti Boys Hostal</option>
+            <option value="Ganga Girls Hostal"> Ganga Girls Hostal</option>
+            <option value="Saraswati Girls Hostal"> Saraswati Gitls Hostal</option>
+            <option value="Kaveri Girls Hostal"> Kaveri Girls Hostal</option>
+            <option value="All">All</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="room">Hostal_room_no</label>
+            <input type="text" id="room" name="hostal_room_no" class="form-control" placeholder="Enter branch"
+              value="<%= typeof hostal_room_no!= 'undefined' ? hostal_room_no: '' %>" />
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label for="html">Gender : </label>
+          </div>
+          <div class="col">
+              <input type="radio" id="html" name="gender" value="Male">
+            <label for="html">Male</label><br>
+          </div>
+          <div class="col">
+             
+              <input type="radio" id="css" name="gender" value="Female">
+              <label for="css">Female</label><br></div>
+           
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password"
+          value="<%= typeof password != 'undefined' ? password : '' %>" />
+      </div>
+
+      <div class="form-group">
+        <label for="password2">Confirm Password</label>
+        <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password"
+          value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="address" id="address" name="address" class="form-control" placeholder="Enter Address"
+          value="<%= typeof address != 'undefined' ? address : '' %>" />
+      </div>
+      <button type="submit" class="btn btn-success btn-block">
+        Register
+      </button>
+    </form>
+  </div>
+</div>
+</div>

@@ -1,0 +1,97 @@
+
+    <div class="contain">
+		<%- include ("./nav3") %>
+	  </div>
+	  <div class="contain mb-2">
+		  <div class="navbar mt-4 navbar-dark bg-light justify-content-center border border-success" id="textarea">
+  
+			  <h4 class="card-title font-weight-bold ">
+				  <h2 class="text-success ">Update Own Query</h2>
+			  </h4>
+		  </div>
+	  </div>
+  
+	  <div class="container">
+		  <div class="card mx-auto mt-4 shadow rounded" >
+			  <div class="card-body">
+				  
+				  <%- include ("./messages") %>
+				  <form method="POST">
+						  <div class="new_user">
+							<div class="col-md-12" >
+							  <div class="form-group">
+								  <input type="text" value="<%=users._id%>" class="form-control" name="_id" id="textarea" >
+							  </div>
+						  </div>
+							  <div class="col-md-12" >
+								<div class="form-group">
+									<input type="text" value="<%=users.name%>" class="form-control" name="name" id="textarea" >
+								</div>
+							</div>
+							<div class="col-md-12" >
+							  <div class="form-group">
+								  <input type="text" value="<%=users.query%>" class="form-control" name="query" id="textarea" >
+							  </div>
+						  </div>
+						  <div class="col-md-12" >
+							<div class="form-group">
+								<input type="text" value="<%=users.hostal%>" class="form-control" name="hostal" id="textarea" >
+							</div>
+						</div>
+							  
+						<% for(var i = (data.length-1); i>= 0 ; i--) { %>
+						  <%=data[i].name%>
+						  <div class="col-md-12" >
+							<div class="form-group">
+							  <label for="textarea">Assiger name</label>
+								<input type="text" value="<%=data[i].name%>" class="form-control" name="assigner_name" id="textarea" >
+								<input type="text" value="<%=data[i].email%>" class="form-control" name="assigner_email" id="textarea" >
+								<input type="text" value="<%=data[i].post%>" class="form-control" name="assigner_post" id="textarea" >
+								<input type="text" value="<%=data[i].phoneno%>" class="form-control" name="assigner_phone_no" id="textarea" >
+							</div>
+						</div>
+						  <% } %>
+							  
+						 
+					  <div class="col-md-12">
+						<div class="form-group">
+							<label for="textarea">Related_to:</label>
+								<select class="form-select" aria-label="Default select example" name="related_to" id="textarea">
+								  <option value="<%=users.related_to%>"><%=users.related_to%></option>
+								  
+								</select>
+						</div>
+					</div>
+					
+  
+  
+					
+				  <div class="col-md-12">
+					<div class="form-group">
+						<label for="textarea">Assigned_to:</label>
+							<select class="form-select" aria-label="Default select example"  name="incharge_email"  id="textarea">
+							  <% for(var i = (datas.length-1); i>= 0 ; i--) { %>
+							  <option value="<%=datas[i].email %>"><%=datas[i].name%></option>
+							  <% } %>
+							</select>
+						  
+					</div> 
+				</div>
+				<% for(var i = (datass.length-1); i>= 0 ; i--) { %>
+				  <%=datass[i].phoneno%> <%=datass[i].name%> <%=datass[i].email%> <%=datass[i].role%>
+				  <% } %>     
+					 
+						  
+							 
+						  
+							  
+						  <div class="form-group">
+							  <button type="submit" id="submit" class="btn btn-success w-100 update">Update</button>
+						  </div>
+						  </div>
+					  </form>
+			  </div>
+		  </div>
+	  </div>
+	  </div>
+	  
