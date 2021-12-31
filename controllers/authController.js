@@ -794,7 +794,7 @@ exports.adminregisterHandle = (req, res) => {
                 <h2>Congratulations !!! </h2?
                 <h2>You are Registered On CSJMU Hostal's Problem Resolver Portel</h2>
                 <p>Email-id :${email}</p>
-                <p>Password : Your D.O.B. in DDMMYYYYY Format</p>
+                <p>Password : ${password}</p>
                 <h2>Note:</h2><p>Please Change Your Password From Forgot Password Menu.<p>${CLIENT_URL}/forgot</p></P>
                 <p>Visit Our Site Here : ${CLIENT_URL}/</p>
                 
@@ -963,7 +963,7 @@ exports.studentregisterHandle = (req, res) => {
                 <h2>Congratulations !!! </h2?
                 <h2>You are Registered On CSJMU Hostal's Problem Resolver Portel</h2>
                 <p>Email-id :${email}</p>
-                <p>Password : Your D.O.B. in DDMMYYYYY Format</p>
+                <p>Password : ${password}</p>
                 <h2>Note:</h2><p>Please Change Your Password From Forgot Password Menu.<p>${CLIENT_URL}/forgot</p></P>
                 <p>Visit Our Site Here : ${CLIENT_URL}/</p>
                 
@@ -1288,7 +1288,7 @@ exports.inchargeregisterHandle = (req, res) => {
                                             <h2>Congratulations !!! </h2?
                                             <h2>You are Registered On CSJMU Hostal's Problem Resolver Portel</h2>
                                             <p>Email-id :${email}</p>
-                                            <p>Password : Your D.O.B. in DDMMYYYYY Format</p>
+                                            <p>Password : ${password}</p>
                                             <h2>Note:</h2><p>Please Change Your Password From Forgot Password Menu.<p>${CLIENT_URL}/forgot</p></P>
                                             <p>Visit Our Site Here : ${CLIENT_URL}/</p>
                                             
@@ -1451,7 +1451,7 @@ exports.authorityregisterHandle = (req, res) => {
                 <h2>Congratulations !!! </h2?
                 <h2>You are Registered On CSJMU Hostal's Problem Resolver Portel</h2>
                 <p>Email-id :${email}</p>
-                <p>Password : Your D.O.B. in DDMMYYYYY Format</p>
+                <p>Password : ${password}</p>
                 <h2>Note:</h2><p>Please Change Your Password From Forgot Password Menu.<p>${CLIENT_URL}/forgot</p></P>
                 <p>Visit Our Site Here : ${CLIENT_URL}/</p>
                 
