@@ -311,7 +311,7 @@ router.get('/delete_incharge_:id',ensureAuthenticated, authorizeRoles("authority
   });
 });
 router.get('/delete_announce_:id',ensureAuthenticated, authorizeRoles("authority"),function(req, res) {
-  User.findByIdAndRemove(req.params.id, function (err, project) {
+  Announces.findByIdAndRemove(req.params.id, function (err, project) {
     if (err) {
     
     req.flash('error_msg', 'Announce Not Deleted !!!');
