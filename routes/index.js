@@ -151,8 +151,9 @@ router.get('/admin_dashboard', ensureAuthenticated, authorizeRoles("admin"),func
 }); 
 });
 router.get('/incharge_dashboard', ensureAuthenticated,authorizeRoles("incharge"), function(req, res , next) {
-  email:req.user.email
-  Queryy.find({incharge_email: req.user.email , status: "Forwarded"},function(err, users) {
+  hostal:req.user.hostal;
+ related_to:req.user.field
+  Queryy.find({status:"inprocess" , hostal:req.user.hostal, related_to:req.user.field },function(err, users) {
     if (err) {
       console.log(err);
     } else {
@@ -174,7 +175,7 @@ router.get('/view_all_queries', ensureAuthenticated, function(req, res , next) {
 });
 router.get('/incharge_own_dashboard', ensureAuthenticated,authorizeRoles("incharge"), function(req, res , next) {
   email:req.user.email
-  Queryy.find({incharge_email: req.user.email ,  $or: [ { status: "Committed" }, {status: "Committed1" },{status: "Resolved" } ]},function(err, users) {
+  Queryy.find({incharge_email: req.user.email ,  $or: [ { status: "Committed" }, {status: "Committed1" },{status: "Forwarded" },{status: "Resolved" } ]},function(err, users) {
     if (err) {
       console.log(err);
     } else {
