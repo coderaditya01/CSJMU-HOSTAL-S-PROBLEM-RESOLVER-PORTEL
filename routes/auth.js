@@ -32,6 +32,12 @@ router.post('/adminregister',ensureAuthenticated, authorizeRoles("authority"), a
 //------------ Incharge Register Route ------------//
 router.get('/inchargeregister',ensureAuthenticated, authorizeRoles("authority"), (req, res) => res.render('inchargeregister'));
 
+//------------ Authority Register Route ------------//
+router.get('/authorityregister',ensureAuthenticated, authorizeRoles("authority"), (req, res) => res.render('authorityregister'));
+
+//------------ Authority Register POST Handle ------------//
+router.post('/authorityregister',ensureAuthenticated, authorizeRoles("authority"), authController.authorityregisterHandle);
+
 
 //------------ Incharge Register POST Handle ------------//
 router.post('/inchargeregister',ensureAuthenticated, authorizeRoles("authority"), authController.inchargeregisterHandle);
