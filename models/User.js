@@ -49,7 +49,7 @@ const UserSchema = new mongoose.Schema({
     type: String
   },
   field: {
-    type: String
+    type: Array
   },
   role: {
     type: String,
