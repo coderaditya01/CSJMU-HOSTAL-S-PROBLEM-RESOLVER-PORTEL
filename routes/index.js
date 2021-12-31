@@ -186,8 +186,8 @@ router.get('/incharge_own_dashboard', ensureAuthenticated,authorizeRoles("inchar
 });
 
 router.get('/admin_own_dashboard', ensureAuthenticated,authorizeRoles("admin"), function(req, res , next) {
-  email: req.user.email
-  Queryy.find({assigner_email: req.user.email}, function(err, users) {
+  hostal: req.user.email
+  Queryy.find({hostal: req.user.hostal}, function(err, users) {
     if (err) {
       console.log(err);
     } else {
