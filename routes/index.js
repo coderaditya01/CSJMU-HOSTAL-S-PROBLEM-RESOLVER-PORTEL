@@ -96,8 +96,7 @@ router.get('/view_all_students', ensureAuthenticated,authorizeRoles("authority")
 }); 
 });
 router.get('/view_all_students1', ensureAuthenticated,authorizeRoles("admin"), function(req, res , next) {
-  hostal:req.user.hostal
-  User.find({role:"user" , hostal:req.user.hostal}, function(err, users) {
+  User.find({role:"user"}, function(err, users) {
     if (err) {
       console.log(err);
     } else {
