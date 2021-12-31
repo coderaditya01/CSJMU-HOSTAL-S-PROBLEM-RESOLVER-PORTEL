@@ -1346,4 +1346,167 @@ exports.inchargeregisterHandle = (req, res) => {
     
          
         }
+    //------------ Authority Register Handle ------------//
+exports.authorityregisterHandle = (req, res) => {
+    const { name, email, phoneno,phoneno1, password, password2 ,hostal,post,dob,gender,address } = req.body;
+    const {added_by }=req.user.name;
+    const {role}="authority";
+    let errors = [];
+
+    //------------ Checking required fields ------------//
+    if (!name || !email || !hostal || !post || !gender || !phoneno || !password ||!address ||!password2) {
+        errors.push({ msg: 'Please enter required fields' });
+    }
+
+    //------------ Checking password mismatch ------------//
+    if (password != password2) {
+        errors.push({ msg: 'Passwords do not match' });
+    }
+    //------------ Checking password length ------------//
+    if (password.length < 8) {
+        errors.push({ msg: 'Password must be at least 8 characters' });
+    }
+    if (phoneno.length < 10 || phoneno.length > 10) {
+        errors.push({ msg: 'Phone No must be 10 digit' });
+    }
+    if (phoneno1.length < 10 || phoneno.length1 > 10) {
+        errors.push({ msg: 'Phone No must be 10 digit' });
+    }
+
+    if (errors.length > 0) {
+        res.render('authorityregister', {
+            errors,
+            name,
+            email,
+            hostal,
+            phoneno,
+            phoneno1,
+            post,
+            dob,
+            gender,
+            password,
+            password2,
+            added_by:req.user.name,
+            role:"authority",
+            address
+        });
+    } else {
+        //------------ Validation passed ------------//
+        User.findOne({ email: email }).then(user => {
+            if (user) {
+                //------------ User already exists ------------//
+                errors.push({ msg: 'Email ID already registered' });
+                res.render('authorityregister', {
+                    errors,
+                    name,
+                    email,
+                    hostal,
+                    phoneno,
+                    phoneno1,
+                    post,
+                    dob,
+                    gender,
+                    password,
+                    added_by:req.user.name,
+                    role:"authority",
+                    address
+                });
+            } else {
+                        const newUser = new User({
+                            name,
+                            email,
+                            hostal,
+                            phoneno,
+                            phoneno1,
+                            post,
+                            dob,
+                            gender,
+                            password,
+                            added_by:req.user.name,
+                            role:"authority",
+                            address
+                        });
+
+                        bcryptjs.genSalt(10, (err, salt) => {
+                            bcryptjs.hash(newUser.password, salt, (err, hash) => {
+                                if (err) throw err;
+                                newUser.password = hash;
+                                newUser
+                                    .save()
+                                    .then(user => {
+                                        
+                const oauth2Client = new OAuth2(
+                    "213207826462-2dpeqbdjt1sfqeb6dkii5fmsemsf5ahs.apps.googleusercontent.com", // ClientID
+                    "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", // Client Secret
+                    "https://developers.google.com/oauthplayground" // Redirect URL
+                );
+
+                oauth2Client.setCredentials({
+                    refresh_token: "1//04nZPsmSeXLUeCgYIARAAGAQSNwF-L9Ir8hznFC6C5-c_ih0odQUH5JDlS5nGOd-SF3zwKft1ZXML9zLGoDFRYYr8V1r0BoBNlU4"
+                });
+                const accessToken = oauth2Client.getAccessToken()
+                const CLIENT_URL = 'http://' + req.headers.host;
+
+                const output = `
+                <h2>Congratulations !!! </h2?
+                <h2>You are Registered On CSJMU Hostal's Problem Resolver Portel</h2>
+                <p>Email-id :${email}</p>
+                <p>Password : Your D.O.B. in DDMMYYYYY Format</p>
+                <h2>Note:</h2><p>Please Change Your Password From Forgot Password Menu.<p>${CLIENT_URL}/forgot</p></P>
+                <p>Visit Our Site Here : ${CLIENT_URL}/</p>
+                
+                `;
+
+                const transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: {
+                        type: "OAuth2",
+                        user: "atul.etoos111@gmail.com",
+                        clientId: "213207826462-2dpeqbdjt1sfqeb6dkii5fmsemsf5ahs.apps.googleusercontent.com",
+                        clientSecret: "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",
+                        refreshToken: "1//04nZPsmSeXLUeCgYIARAAGAQSNwF-L9Ir8hznFC6C5-c_ih0odQUH5JDlS5nGOd-SF3zwKft1ZXML9zLGoDFRYYr8V1r0BoBNlU4",
+                        accessToken: accessToken
+                    },
+                });
+
+                // send mail with defined transport object
+                const mailOptions = {
+                    from: '"CSJMU Hostals Problem Resolver Portel" <atul.etoos111@gmail.com>', // sender address
+                    to: email, // list of receivers
+                    subject: "Account Confirmation ", // Subject line
+                    generateTextFromHTML: true,
+                    html: output, // html body
+                };
+                transporter.sendMail(mailOptions, (error, info) => {
+                    if (error) {
+                        console.log(error);
+                       ;
+                    }
+                    else {
+                        console.log('Mail sent : %s', info.response);
+                        
+                    }
+                })
+                                      req.flash(
+                                            'success_msg',
+                                            'Authority Registered Successfully.'
+                                        );
+                                        res.redirect('/authority_dashboard');
+                                    })
+                                    .catch(err => {
+                                        console.log(err)
+                                        req.flash(
+                                            'error_msg',
+                                            'Authority Not Registered.Please Try Again.'
+                                        );
+                                        res.redirect('/authorityregister');
+                                    });
+                            });
+                        });
+                    }
+                });
+            }
+
+     
+    }
     
