@@ -310,6 +310,19 @@ router.get('/delete_incharge_:id',ensureAuthenticated, authorizeRoles("authority
     }
   });
 });
+router.get('/delete_incharge1_:id',ensureAuthenticated, authorizeRoles("authority"),function(req, res) {
+  User.findByIdAndRemove(req.params.id, function (err, project) {
+    if (err) {
+    
+    req.flash('error_msg', 'Incharge Data Not Deleted !!!');
+    res.redirect('../view_all_incharges1');
+    } 
+    else {
+      req.flash('success_msg', 'Incharge Data Deleted');
+      res.redirect('../view_all_incharges1');
+    }
+  });
+});
 router.get('/delete_announce_:id',ensureAuthenticated, authorizeRoles("authority"),function(req, res) {
   Announces.findByIdAndRemove(req.params.id, function (err, project) {
     if (err) {
