@@ -257,6 +257,19 @@ router.get('/delete_query_:id',ensureAuthenticated,authorizeRoles("user"), funct
     }
   });
 });  
+router.get('/delete_query1_:id',ensureAuthenticated, authorizeRoles("authority"), function(req, res) {
+  Queryy.findByIdAndRemove(req.params.id, function (err, project) {
+    if (err) {
+    
+    req.flash('error_msg', 'Problem Not Deleted');
+    res.redirect('../view_all_queries');
+    } 
+    else {
+      req.flash('success_msg', 'Problem Deleted');
+      res.redirect('../view_all_queries');
+    }
+  });
+});  
 router.get('/delete_student_:id',ensureAuthenticated, authorizeRoles("authority"),function(req, res) {
   User.findByIdAndRemove(req.params.id, function (err, project) {
     if (err) {
