@@ -54,7 +54,7 @@ exports.registerHandle = (req, res) => {
             gender,
             password,
             password2,
-            added_by:"himself",
+            added_by:"Self",
             role:"user",
             address
         });
@@ -79,7 +79,7 @@ exports.registerHandle = (req, res) => {
                     gender,
                     password,
                     password2,
-                    added_by:"himself",
+                    added_by:"Self",
                     role:"user",
                     address
                 });
@@ -187,7 +187,7 @@ exports.activateHandle = (req, res) => {
                             dob,
                             gender,
                             password,
-                            added_by:"himself",
+                            added_by:"Self",
                             role:"user",
                             address
                         });
