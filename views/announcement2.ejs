@@ -36,7 +36,10 @@
                                     
                                   
                                     <small class=" text-uppercase text-primary mb-1 font-weight-bold"><span class="text-primary "></span>- <%= users[i].name %> [ <%= users[i].post%> ]</small>
-                                  
+                                  <a href="/delete_announce_<%= users[i]._id %>" onclick="return confirm('Are you confirm want to delete');"  class="btn  border-shadow delete">
+                                        <span class="text-gradient"><i class="fas fa-trash "
+                                                style="color:red"></i></span>
+                                    </a>
                                 </div>
 
                             </div>
