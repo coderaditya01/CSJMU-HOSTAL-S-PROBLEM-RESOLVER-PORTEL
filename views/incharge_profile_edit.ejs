@@ -45,7 +45,28 @@
                                 <input type="date" name="dob" value="<%= users.dob %>" placeholder="" class="form-control" id="dob"
                                      >
                             </div>
+                              <div class="form-group mt-2">
+                                <div class="row">
+                                  <div class="col-md-4">
+                                <label for="post">Select Profession:<small  class="form-text text-muted">Please Hold Ctrl Key to Select Multiple Fields</small></label>
+                                
+                              </div>
                               
+                                <div class="col-md-4">
+                                <select class="form-select" aria-label="Default select example" name="field" multiple id="post">
+                        
+                                  <option value="Electrician">Electrician</option>
+                                  <option value="Plumber">Plumber</option>
+                                  <option value="Cleaner">Cleaner</option>
+                                  <option value="Carpenter">Carpenter</option>
+                                  <option value="Technical Assistant">Technical Assistant</option>
+                                  <option value="Mess">Mess</option>
+                                  <option value="Horticulturist">Horticulturist</option>
+                                  <option value="Others">Others</option>
+                                </div>
+                                </select>
+                              </div>
+                              </div>
                               <div class="form-group ">
                                   <label for="addrress">Address:</label>
                                   <input type="text" name="address" value="<%= users.address %>" placeholder="" class="form-control" id="phoneno"
