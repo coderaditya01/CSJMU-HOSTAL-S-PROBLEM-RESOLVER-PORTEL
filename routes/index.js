@@ -310,7 +310,7 @@ router.get('/delete_incharge_:id',ensureAuthenticated, authorizeRoles("authority
     }
   });
 });
-router.get('/delete_incharge1_:id',ensureAuthenticated, authorizeRoles("authority"),function(req, res) {
+router.get('/delete_incharge1_:id',ensureAuthenticated, authorizeRoles("admin"),function(req, res) {
   User.findByIdAndRemove(req.params.id, function (err, project) {
     if (err) {
     
