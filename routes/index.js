@@ -140,8 +140,7 @@ router.get('/view_all_incharges1', ensureAuthenticated,authorizeRoles("admin"), 
 }); 
 });
 router.get('/admin_dashboard', ensureAuthenticated, authorizeRoles("admin"),function(req, res , next) {
-  hostal:req.user.hostal
-  Queryy.find({status :"inprocess" , hostal:req.user.hostal},function(err, users) {
+  Queryy.find({status :"inprocess"},function(err, users) {
     if (err) {
       console.log(err);
     } else {
@@ -151,9 +150,8 @@ router.get('/admin_dashboard', ensureAuthenticated, authorizeRoles("admin"),func
 }); 
 });
 router.get('/incharge_dashboard', ensureAuthenticated,authorizeRoles("incharge"), function(req, res , next) {
-  hostal:req.user.hostal;
- related_to:req.user.field
-  Queryy.find({status:"inprocess" , hostal:req.user.hostal, related_to:req.user.field },function(err, users) {
+  email:req.user.email
+  Queryy.find({incharge_email: req.user.email , status: "Forwarded"},function(err, users) {
     if (err) {
       console.log(err);
     } else {
@@ -175,7 +173,7 @@ router.get('/view_all_queries', ensureAuthenticated, function(req, res , next) {
 });
 router.get('/incharge_own_dashboard', ensureAuthenticated,authorizeRoles("incharge"), function(req, res , next) {
   email:req.user.email
-  Queryy.find({incharge_email: req.user.email ,  $or: [ { status: "Committed" }, {status: "Committed1" },{status: "Forwarded" },{status: "Resolved" } ]},function(err, users) {
+  Queryy.find({incharge_email: req.user.email ,  $or: [ { status: "Committed" }, {status: "Committed1" },{status: "Resolved" } ]},function(err, users) {
     if (err) {
       console.log(err);
     } else {
@@ -186,8 +184,8 @@ router.get('/incharge_own_dashboard', ensureAuthenticated,authorizeRoles("inchar
 });
 
 router.get('/admin_own_dashboard', ensureAuthenticated,authorizeRoles("admin"), function(req, res , next) {
-  hostal: req.user.email
-  Queryy.find({hostal: req.user.hostal}, function(err, users) {
+  email: req.user.email
+  Queryy.find({assigner_email: req.user.email}, function(err, users) {
     if (err) {
       console.log(err);
     } else {
@@ -309,6 +307,19 @@ router.get('/delete_incharge_:id',ensureAuthenticated, authorizeRoles("authority
     else {
       req.flash('success_msg', 'Incharge Data Deleted');
       res.redirect('../view_all_incharges');
+    }
+  });
+});
+router.get('/delete_announce_:id',ensureAuthenticated, authorizeRoles("authority"),function(req, res) {
+  User.findByIdAndRemove(req.params.id, function (err, project) {
+    if (err) {
+    
+    req.flash('error_msg', 'Announce Not Deleted !!!');
+    res.redirect('../announcement2');
+    } 
+    else {
+      req.flash('success_msg', 'Announcement Deleted');
+      res.redirect('../announcement2');
     }
   });
 });
