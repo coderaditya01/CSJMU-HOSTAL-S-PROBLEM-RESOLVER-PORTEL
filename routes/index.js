@@ -375,7 +375,7 @@ router.get('/update_all_query_:id', ensureAuthenticated,authorizeRoles("authorit
           related_to: user.related_to
           console.log(user.related_to)
           console.log(user.incharge_email)
-              User.find( { field: user.related_to},function(err, datas) {
+              User.find( { role:"incharge"},function(err, datas) {
             if (err) {
               console.log(err);
             }
