@@ -176,7 +176,7 @@ router.get('/incharge_own_dashboard', ensureAuthenticated,authorizeRoles("inchar
     if (err) {
       console.log(err);
     } else {
-      res.render('incharge_dash', { users: users });
+      res.render('incharge_own_dashboard', { users: users });
       console.log(users);
     }
 }); 
