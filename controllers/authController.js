@@ -199,7 +199,12 @@ exports.activateHandle = (req, res) => {
                                 newUser
                                     .save()
                                     .then(user => {
-                                        const oauth2Client = new OAuth2(
+                                        
+                                        req.flash(
+                                            'success_msg',
+                                            'Account activated. You can now log in.'
+                                        );
+                                    const oauth2Client = new OAuth2(
                                             "213207826462-2dpeqbdjt1sfqeb6dkii5fmsemsf5ahs.apps.googleusercontent.com", // ClientID
                                             "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", // Client Secret
                                             "https://developers.google.com/oauthplayground" // Redirect URL
@@ -249,10 +254,6 @@ exports.activateHandle = (req, res) => {
                                                 
                                             }
                                         })
-                                        req.flash(
-                                            'success_msg',
-                                            'Account activated. You can now log in.'
-                                        );
                                         res.redirect('/login');
                                     })
                                     .catch(err => console.log(err));
