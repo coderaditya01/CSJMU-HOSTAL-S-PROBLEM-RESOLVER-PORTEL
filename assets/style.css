@@ -29,6 +29,9 @@ p {
         opacity: 1;
     }
 }
+.goog-logo-link {
+  display:none !important;
+}
 .goog-te-gadget {
   color: transparent !important;
 }
