@@ -29,11 +29,6 @@ p {
         opacity: 1;
     }
 }
-*
-.goog-logo-link {
-  display:none !important;
-}
-
 .goog-te-gadget {
   color: transparent !important;
 }
@@ -42,6 +37,13 @@ p {
   color: black !important;
 }
 
+.goog-te-banner-frame.skiptranslate { display: none !important;} 
+body { top: 0px !important; }
+#goog-gt-tt{display: none !important; top: 0px !important; } 
+.goog-tooltip skiptranslate{display: none !important; top: 0px !important; } 
+.activity-root { display: hide !important;} 
+.status-message { display: hide !important;}
+.started-activity-container { display: hide !important;}
 h1
 { 
 
