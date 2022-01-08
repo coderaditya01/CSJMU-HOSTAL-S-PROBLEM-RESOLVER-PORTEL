@@ -481,7 +481,7 @@ exports.loginHandle = function(req, res, next){
         }
         // User does not exist
         if ( ! user ) {
-            req.flash('error', 'User Not Registered');
+            req.flash('error', 'Invalid email or password');
             res.redirect('/login');
             return
         }
