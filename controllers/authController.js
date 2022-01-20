@@ -92,7 +92,7 @@ exports.registerHandle = (req, res) => {
                 );
 
                 oauth2Client.setCredentials({
-                    refresh_token: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0"
+                    refresh_token: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os"
                 });
                 const accessToken = oauth2Client.getAccessToken()
 
@@ -112,7 +112,7 @@ exports.registerHandle = (req, res) => {
                         user: "atul.etoos111@gmail.com",
                         clientId: "213207826462-2dpeqbdjt1sfqeb6dkii5fmsemsf5ahs.apps.googleusercontent.com",
                         clientSecret: "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",
-                        refreshToken: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0",
+                        refreshToken: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os",
                         accessToken: accessToken
                     },
                 });
@@ -211,7 +211,7 @@ exports.activateHandle = (req, res) => {
                                         );
                         
                                         oauth2Client.setCredentials({
-                                            refresh_token: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0"
+                                            refresh_token: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os"
                                         });
                                         const accessToken = oauth2Client.getAccessToken()
                                         const CLIENT_URL = 'http://' + req.headers.host;
@@ -231,7 +231,7 @@ exports.activateHandle = (req, res) => {
                                                 user: "atul.etoos111@gmail.com",
                                                 clientId: "213207826462-2dpeqbdjt1sfqeb6dkii5fmsemsf5ahs.apps.googleusercontent.com",
                                                 clientSecret: "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",
-                                                refreshToken: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0",
+                                                refreshToken: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os",
                                                 accessToken: accessToken
                                             },
                                         });
@@ -303,7 +303,7 @@ exports.forgotPassword = (req, res) => {
                 );
 
                 oauth2Client.setCredentials({
-                    refresh_token: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0"
+                    refresh_token: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os"
                 });
                 const accessToken = oauth2Client.getAccessToken()
 
@@ -331,7 +331,7 @@ exports.forgotPassword = (req, res) => {
                                 user: "atul.etoos111@gmail.com",
                         clientId: "213207826462-2dpeqbdjt1sfqeb6dkii5fmsemsf5ahs.apps.googleusercontent.com",
                         clientSecret: "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",
-                        refreshToken: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0",
+                        refreshToken: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os",
                         accessToken: accessToken
                             },
                         });
@@ -786,7 +786,7 @@ exports.adminregisterHandle = (req, res) => {
                 );
 
                 oauth2Client.setCredentials({
-                    refresh_token: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0"
+                    refresh_token: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os"
                 });
                 const accessToken = oauth2Client.getAccessToken()
                 const CLIENT_URL = 'http://' + req.headers.host;
@@ -808,7 +808,7 @@ exports.adminregisterHandle = (req, res) => {
                         user: "atul.etoos111@gmail.com",
                         clientId: "213207826462-2dpeqbdjt1sfqeb6dkii5fmsemsf5ahs.apps.googleusercontent.com",
                         clientSecret: "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",
-                        refreshToken: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0",
+                        refreshToken: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os",
                         accessToken: accessToken
                     },
                 });
@@ -955,7 +955,7 @@ exports.studentregisterHandle = (req, res) => {
                 );
 
                 oauth2Client.setCredentials({
-                    refresh_token: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0"
+                    refresh_token: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os"
                 });
                 const accessToken = oauth2Client.getAccessToken()
                 const CLIENT_URL = 'http://' + req.headers.host;
@@ -977,7 +977,7 @@ exports.studentregisterHandle = (req, res) => {
                         user: "atul.etoos111@gmail.com",
                         clientId: "213207826462-2dpeqbdjt1sfqeb6dkii5fmsemsf5ahs.apps.googleusercontent.com",
                         clientSecret: "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",
-                        refreshToken: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0",
+                        refreshToken: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os",
                         accessToken: accessToken
                     },
                 });
@@ -1118,7 +1118,7 @@ exports.inchargeregisterHandle = (req, res) => {
                                         );
                         
                                         oauth2Client.setCredentials({
-                                            refresh_token: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0"
+                                            refresh_token: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os"
                                         });
                                         const accessToken = oauth2Client.getAccessToken()
                                         const CLIENT_URL = 'http://' + req.headers.host;
@@ -1140,7 +1140,7 @@ exports.inchargeregisterHandle = (req, res) => {
                                                 user: "atul.etoos111@gmail.com",
                                                 clientId: "213207826462-2dpeqbdjt1sfqeb6dkii5fmsemsf5ahs.apps.googleusercontent.com",
                                                 clientSecret: "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",
-                                                refreshToken: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0",
+                                                refreshToken: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os",
                                                 accessToken: accessToken
                                             },
                                         });
@@ -1280,7 +1280,7 @@ exports.inchargeregisterHandle = (req, res) => {
                                             );
                             
                                             oauth2Client.setCredentials({
-                                                refresh_token: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0"
+                                                refresh_token: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os"
                                             });
                                             const accessToken = oauth2Client.getAccessToken()
                                             const CLIENT_URL = 'http://' + req.headers.host;
@@ -1302,7 +1302,7 @@ exports.inchargeregisterHandle = (req, res) => {
                                                     user: "atul.etoos111@gmail.com",
                                                     clientId: "213207826462-2dpeqbdjt1sfqeb6dkii5fmsemsf5ahs.apps.googleusercontent.com",
                                                     clientSecret: "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",
-                                                    refreshToken: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0",
+                                                    refreshToken: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os",
                                                     accessToken: accessToken
                                                 },
                                             });
@@ -1443,7 +1443,7 @@ exports.authorityregisterHandle = (req, res) => {
                 );
 
                 oauth2Client.setCredentials({
-                    refresh_token: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0"
+                    refresh_token: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os"
                 });
                 const accessToken = oauth2Client.getAccessToken()
                 const CLIENT_URL = 'http://' + req.headers.host;
@@ -1465,7 +1465,7 @@ exports.authorityregisterHandle = (req, res) => {
                         user: "atul.etoos111@gmail.com",
                         clientId: "213207826462-2dpeqbdjt1sfqeb6dkii5fmsemsf5ahs.apps.googleusercontent.com",
                         clientSecret: "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",
-                        refreshToken: "1//04bN9VdpsVkK8CgYIARAAGAQSNwF-L9Ir3hfIFNpD7fFxEn3qoGZEwPimx5P8hCAdbiDPoumrDJkLhmPfVU_v75qDYvLvEer8P-0",
+                        refreshToken: "1//04SF-TLZK0wRiCgYIARAAGAQSNwF-L9Ir5S4WdwLaKQbz25crI2A3Eqd3Vq-3zkiPgLyofnVsqpTf0lSbEnoHJTobg-_X9D542Os",
                         accessToken: accessToken
                     },
                 });
